@@ -1,10 +1,14 @@
 import express from 'express';
+import cors from 'cors';
 import fs from 'fs/promises';
 import path from 'path';
 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Allow cross-origin requests (e.g. from p5.js web editor)
+app.use(cors());
 
 // Middleware to parse incoming JSON payloads
 app.use(express.json());
